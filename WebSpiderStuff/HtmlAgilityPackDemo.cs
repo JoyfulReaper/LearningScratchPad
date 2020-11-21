@@ -11,8 +11,18 @@ namespace WebSpiderStuff
     {
         public static void DemoEntryPoint()
         {
+            var links = GetLinks(new Uri("http://www.google.com"));
+
+            Console.WriteLine("About to follow a link! Ready?");
+            Console.ReadLine();
+
+            GetLinks(links[0]);
+        }
+
+        public static List<Uri> GetLinks(Uri link)
+        {
             HtmlWeb web = new HtmlWeb();
-            HtmlDocument document = web.Load("http://google.com");
+            HtmlDocument document = web.Load(link);
 
             HtmlNode[] nodes = document.DocumentNode.SelectNodes("//a").ToArray();
 
@@ -20,21 +30,21 @@ namespace WebSpiderStuff
 
             foreach (var item in nodes)
             {
-                string link = item.Attributes["href"].Value;
+                string foundLink = item.Attributes["href"].Value;
 
                 try
                 {
-                    links.Add(new Uri(link));
+                    links.Add(new Uri(foundLink));
                 }
-                catch(UriFormatException e)
+                catch (UriFormatException e)
                 {
-                    ConsoleHelper.ColorWriteLine(ConsoleColor.Red, $"ERORR: {link} is not a valid URI");
+                    ConsoleHelper.ColorWriteLine(ConsoleColor.Red, $"ERORR: {foundLink} is not a valid URI");
                 }
 
                 Console.WriteLine(item.Attributes["href"].Value);
             }
 
-
+            return links;
         }
     }
 }
