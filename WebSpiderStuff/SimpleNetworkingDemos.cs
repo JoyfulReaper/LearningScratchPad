@@ -20,6 +20,33 @@ namespace WebSpiderStuff
             Console.WriteLine("\nEnd demo\n");
         }
 
+        public static void WebClientDemo()
+        {
+            WebClient wc = new WebClient { Proxy = null };
+
+            Console.Write("Enter an URI: ");
+            var target = Console.ReadLine();
+
+            Console.Write("(D)ownload or (P)rint to screen? ");
+            var how = Console.ReadLine();
+
+            if (Char.ToUpper(how[0]) == 'D')
+            {
+                Console.Write("Filename: ");
+                string dest = Console.ReadLine();
+                wc.DownloadFile(target, dest);
+            }
+            else if (char.ToUpper(how[0]) == 'P')
+            {
+                Console.WriteLine(wc.DownloadString(target));
+            }
+            else
+            {
+                Console.WriteLine("Come one, next time make a valid selection!");
+                return;
+            }
+        }
+
         public static void UriDemo()
         {
             Console.Write("\nPlease enter a valid URI: ");
