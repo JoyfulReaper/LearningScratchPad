@@ -11,17 +11,19 @@ namespace WebSpiderStuff
     {
         public static void DemoEntryPoint()
         {
-            List<Uri> links = new List<Uri>();
+            List<Uri> links = new List<Uri>(); // List of found URIs
 
             try
             {
                 Console.WriteLine("Enter seed URI: ");
                 var seed = Console.ReadLine();
 
-                links = GetLinks(new Uri(seed));
+                links = GetLinks(new Uri(seed)); // Get links for seed
             }
             catch(UriFormatException e)
             {
+                // Note must be a valid URI, so the Scheme is required
+                // https://docs.microsoft.com/en-us/dotnet/api/system.uri?view=net-5.0
                 Console.WriteLine("\nPlease enter a valid seed URI!");
                 DemoEntryPoint();
             }
