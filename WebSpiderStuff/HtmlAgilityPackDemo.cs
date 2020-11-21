@@ -28,19 +28,27 @@ namespace WebSpiderStuff
                 ConsoleHelper.ColorWrite(ConsoleColor.Cyan, $"{allLinks.Count} Links found. About to follow the random link! Ready? Y/n: ");
                 var ready = Console.ReadLine();
 
-                if(Char.ToUpper(ready[0]) != 'Y' )
+                if(ready == string.Empty || Char.ToUpper(ready[0]) == 'Y')
+                {
+                    var newLinks = GetLinks(allLinks[linkNumber]);
+                    followedLinks.Add(allLinks[linkNumber]);
+                    AddLinks(newLinks);
+                }
+                else
                 {
                     return;
                 }
-
-                var newLinks = GetLinks(allLinks[linkNumber]);
-                followedLinks.Add(allLinks[linkNumber]);
-                AddLinks(newLinks);
             }
         }
 
         private static void AddLinks(List<Uri> newLinks)
         {
+            if(newLinks == null)
+            {
+                ConsoleHelper.ColorWriteLine(ConsoleColor.Magenta, "AddLinks(): newLinks was null!");
+                return;
+            }
+
             foreach (var l in newLinks)
             {
                 if (!allLinks.Contains(l))
@@ -57,17 +65,25 @@ namespace WebSpiderStuff
         private static Uri GetSeedUri()
         {
             Uri seed = null;
+            string input = String.Empty;
 
             try
             {
                 Console.WriteLine("Enter seed URI: ");
-                var input = Console.ReadLine();
+                input = Console.ReadLine();
                 seed = new Uri(input);
             }
             catch (UriFormatException e)
             {
                 // Note must be a valid URI, so the Scheme is required
                 // https://docs.microsoft.com/en-us/dotnet/api/system.uri?view=net-5.0
+
+                if(!input.StartsWith("http"))
+                {
+                    Console.WriteLine("Did you forget to add the scheme?");
+                    DemoEntryPoint();
+                }
+
                 Console.WriteLine("\nPlease enter a valid seed URI!");
                 DemoEntryPoint();
             }
@@ -86,7 +102,12 @@ namespace WebSpiderStuff
             HtmlWeb web = new HtmlWeb();
             HtmlDocument document = web.Load(link);
 
-            HtmlNode[] nodes = document.DocumentNode.SelectNodes("//a").ToArray();
+            HtmlNode[] nodes = document.DocumentNode.SelectNodes("//a")?.ToArray();
+            if(nodes == null)
+            {
+                ConsoleHelper.ColorWriteLine(ConsoleColor.Magenta, "GetLinks(): nodes is null!");
+                return null;
+            }
 
             List<Uri> links = new List<Uri>();
 
