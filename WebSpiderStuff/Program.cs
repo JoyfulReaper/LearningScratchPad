@@ -17,6 +17,7 @@ namespace WebSpiderStuff
                 ConsoleHelper.ColorWriteLine(ConsoleColor.DarkYellow, "1. Random simple demos");
                 ConsoleHelper.ColorWriteLine(ConsoleColor.DarkYellow, "2. URI Demo");
                 ConsoleHelper.ColorWriteLine(ConsoleColor.DarkYellow, "3. WebCleint Demo");
+                ConsoleHelper.ColorWriteLine(ConsoleColor.DarkYellow, "4. HtmlAgility Demo");
                 ConsoleHelper.ColorWriteLine(ConsoleColor.DarkYellow, "9. Quit");
 
                 Console.WriteLine();
@@ -39,6 +40,9 @@ namespace WebSpiderStuff
                     break;
                 case 3:
                     SimpleNetworkingDemos.WebClientDemo();
+                    break;
+                case 4:
+                    HtmlAgilityPackDemo.DemoEntryPoint();
                     break;
                 case 9:
                     Environment.Exit(0);
