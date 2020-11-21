@@ -11,9 +11,23 @@ namespace WebSpiderStuff
     {
         public static void DemoEntryPoint()
         {
-            var links = GetLinks(new Uri("http://www.google.com"));
+            List<Uri> links = new List<Uri>();
 
-            Console.WriteLine("About to follow a link! Ready?");
+            try
+            {
+                Console.WriteLine("Enter seed URI: ");
+                var seed = Console.ReadLine();
+
+                links = GetLinks(new Uri(seed));
+            }
+            catch(UriFormatException e)
+            {
+                Console.WriteLine("\nPlease enter a valid seed URI!");
+                DemoEntryPoint();
+            }
+
+            ConsoleHelper.ColorWriteLine(ConsoleColor.Cyan, "About to follow a link! Ready?");
+            ConsoleHelper.ColorWriteLine(ConsoleColor.Cyan, $"Following: {links[0]}");
             Console.ReadLine();
 
             GetLinks(links[0]);
@@ -30,7 +44,7 @@ namespace WebSpiderStuff
 
             foreach (var item in nodes)
             {
-                string foundLink = item.Attributes["href"].Value;
+                string foundLink = item.Attributes["href"]?.Value;
 
                 try
                 {
@@ -38,6 +52,7 @@ namespace WebSpiderStuff
                 }
                 catch (UriFormatException e)
                 {
+                    // Note relative links need to be expanded to absoulute or they won't be valid here
                     ConsoleHelper.ColorWriteLine(ConsoleColor.Red, $"ERORR: {foundLink} is not a valid URI");
                 }
 
