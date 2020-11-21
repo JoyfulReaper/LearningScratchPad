@@ -16,11 +16,25 @@ namespace WebSpiderStuff
 
             HtmlNode[] nodes = document.DocumentNode.SelectNodes("//a").ToArray();
 
+            List<Uri> links = new List<Uri>();
+
             foreach (var item in nodes)
             {
+                string link = item.Attributes["href"].Value;
+
+                try
+                {
+                    links.Add(new Uri(link));
+                }
+                catch(UriFormatException e)
+                {
+                    ConsoleHelper.ColorWriteLine(ConsoleColor.Red, $"ERORR: {link} is not a valid URI");
+                }
+
                 Console.WriteLine(item.Attributes["href"].Value);
-                
             }
+
+
         }
     }
 }
