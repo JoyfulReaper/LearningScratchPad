@@ -154,17 +154,16 @@ namespace WebSpiderStuff
             try
             {
                 Uri fixedLink = new Uri(link, foundLink);
+                ConsoleHelper.ColorWriteLine(ConsoleColor.Green, $"Fixed link: {fixedLink}");
+
                 if (!links.Contains(fixedLink) && !followedLinks.Contains(fixedLink))
                 {
-                    links.Add(new Uri(foundLink));
+                    links.Add(fixedLink);
                 }
             }
             catch (UriFormatException ex)
             {
-                if (ex != null) // Probably the wrong thing to do?
-                {
-                    ConsoleHelper.ColorWriteLine(ConsoleColor.Red, $"Failed to fix link: {ex.Message}");
-                }
+                ConsoleHelper.ColorWriteLine(ConsoleColor.Red, $"Failed to fix link: {ex.Message}");
             }
         }
     }
