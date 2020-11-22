@@ -138,12 +138,34 @@ namespace WebSpiderStuff
                 {
                     // Note relative links need to be expanded to absoulute or they won't be valid here
                     ConsoleHelper.ColorWriteLine(ConsoleColor.Red, $"ERORR: {foundLink} is not a valid URI");
+                    ConsoleHelper.ColorWriteLine(ConsoleColor.Cyan, "Trying to fix!");
+
+                    FixLink(link, foundLink, links);
                 }
 
                 Console.WriteLine(item.Attributes["href"].Value);
             }
 
             return links;
+        }
+
+        private static void FixLink(Uri link, string foundLink, List<Uri> links)
+        {
+            try
+            {
+                Uri fixedLink = new Uri(link, foundLink);
+                if (!links.Contains(fixedLink) && !followedLinks.Contains(fixedLink))
+                {
+                    links.Add(new Uri(foundLink));
+                }
+            }
+            catch (UriFormatException ex)
+            {
+                if (ex != null) // Probably the wrong thing to do?
+                {
+                    ConsoleHelper.ColorWriteLine(ConsoleColor.Red, $"Failed to fix link: {ex.Message}");
+                }
+            }
         }
     }
 }
