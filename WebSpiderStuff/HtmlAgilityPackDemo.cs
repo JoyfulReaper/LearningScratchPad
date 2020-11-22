@@ -23,12 +23,13 @@ namespace WebSpiderStuff
             {
                 int linkNumber = r.Next(0, allLinks.Count); // Get a random index
 
-                ConsoleHelper.ColorWriteLine(ConsoleColor.Cyan, $"I have followed {followedLinks.Count} links!");
+                ConsoleHelper.ColorWriteLine(ConsoleColor.Cyan, $"I have followed {followedLinks.Count} links! I know about {allLinks.Count} links!");
                 ConsoleHelper.ColorWriteLine(ConsoleColor.Cyan, $"Next to follow: {allLinks[linkNumber]}");
                 ConsoleHelper.ColorWrite(ConsoleColor.Cyan, $"{allLinks.Count} Links found. About to follow the random link! Ready? Y/n: ");
                 var ready = Console.ReadLine();
 
                 if(ready == string.Empty || Char.ToUpper(ready[0]) == 'Y')
+                //if(true)
                 {
                     var newLinks = GetLinks(allLinks[linkNumber]);
                     followedLinks.Add(allLinks[linkNumber]);
@@ -100,7 +101,16 @@ namespace WebSpiderStuff
             }
 
             HtmlWeb web = new HtmlWeb();
-            HtmlDocument document = web.Load(link);
+            HtmlDocument document = null;
+            try
+            {
+               document = web.Load(link);
+            }
+            catch (System.Net.WebException e)
+            {
+                ConsoleHelper.ColorWriteLine($"Exception thrown: {e.Message}");
+                return null;
+            }
 
             HtmlNode[] nodes = document.DocumentNode.SelectNodes("//a")?.ToArray();
             if(nodes == null)
@@ -138,9 +148,9 @@ namespace WebSpiderStuff
                 {
                     // Note relative links need to be expanded to absoulute or they won't be valid here
                     ConsoleHelper.ColorWriteLine(ConsoleColor.Red, $"ERORR: {foundLink} is not a valid URI");
-                    ConsoleHelper.ColorWriteLine(ConsoleColor.Cyan, "Trying to fix!");
+                    ConsoleHelper.ColorWriteLine(ConsoleColor.Cyan, "Trying to convert to absolute!");
 
-                    FixLink(link, foundLink, links);
+                    ConvertRelativeToAbsolute(link, foundLink, links);
                 }
 
                 Console.WriteLine(item.Attributes["href"].Value);
@@ -149,12 +159,12 @@ namespace WebSpiderStuff
             return links;
         }
 
-        private static void FixLink(Uri link, string foundLink, List<Uri> links)
+        private static void ConvertRelativeToAbsolute(Uri link, string foundLink, List<Uri> links)
         {
             try
             {
                 Uri fixedLink = new Uri(link, foundLink);
-                ConsoleHelper.ColorWriteLine(ConsoleColor.Green, $"Fixed link: {fixedLink}");
+                ConsoleHelper.ColorWriteLine(ConsoleColor.Green, $"Converted link: {fixedLink}");
 
                 if (!links.Contains(fixedLink) && !followedLinks.Contains(fixedLink))
                 {
@@ -163,7 +173,7 @@ namespace WebSpiderStuff
             }
             catch (UriFormatException ex)
             {
-                ConsoleHelper.ColorWriteLine(ConsoleColor.Red, $"Failed to fix link: {ex.Message}");
+                ConsoleHelper.ColorWriteLine(ConsoleColor.Red, $"Failed to convert link: {ex.Message}");
             }
         }
     }
