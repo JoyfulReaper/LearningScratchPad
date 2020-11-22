@@ -1,0 +1,31 @@
+﻿@page "/logging"
+@using Serilog
+
+<div class="row mt-1">
+    <button class="btn btn-primary" @onclick="LogMessage">Log Message with Serilog</button>
+</div>
+
+<div class="row mt-1">
+    <button class="btn btn-warning" @onclick="LogWarning">Log Warning with Serilog</button>
+</div>
+
+<div class="row mt-1">
+    <button class="btn btn-danger" @onclick="LogError">Log Error with Serilog</button>
+</div>
+
+@code {
+    private void LogMessage()
+    {
+        Log.Information("Information Message");
+    }
+
+    private void LogWarning()
+    {
+        Log.Information("Warning Message");
+    }
+
+    private void LogError()
+    {
+        Log.Information("Error Message");
+    }
+}

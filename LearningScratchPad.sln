@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSpiderStuff", "WebSpider
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krice8989", "ConsoleApp1\Krice8989.csproj", "{091B2399-6441-4F57-9A40-79BE782F501A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorNETUG", "BlazorNETUG\BlazorNETUG.csproj", "{7B200148-814F-4B57-A0FD-F87EBF76E05D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorNETUG", "BlazorNETUG\BlazorNETUG.csproj", "{06A4991D-1363-4E1D-A50E-DFBCED4D1021}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{091B2399-6441-4F57-9A40-79BE782F501A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{091B2399-6441-4F57-9A40-79BE782F501A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{091B2399-6441-4F57-9A40-79BE782F501A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7B200148-814F-4B57-A0FD-F87EBF76E05D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7B200148-814F-4B57-A0FD-F87EBF76E05D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7B200148-814F-4B57-A0FD-F87EBF76E05D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B200148-814F-4B57-A0FD-F87EBF76E05D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06A4991D-1363-4E1D-A50E-DFBCED4D1021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06A4991D-1363-4E1D-A50E-DFBCED4D1021}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06A4991D-1363-4E1D-A50E-DFBCED4D1021}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06A4991D-1363-4E1D-A50E-DFBCED4D1021}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
