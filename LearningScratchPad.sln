@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSpiderStuff", "WebSpiderStuff\WebSpiderStuff.csproj", "{B5B530D7-12EA-4D73-912C-28726616C4D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Krice8989", "ConsoleApp1\Krice8989.csproj", "{091B2399-6441-4F57-9A40-79BE782F501A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krice8989", "ConsoleApp1\Krice8989.csproj", "{091B2399-6441-4F57-9A40-79BE782F501A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorNETUG", "BlazorNETUG\BlazorNETUG.csproj", "{7B200148-814F-4B57-A0FD-F87EBF76E05D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{091B2399-6441-4F57-9A40-79BE782F501A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{091B2399-6441-4F57-9A40-79BE782F501A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{091B2399-6441-4F57-9A40-79BE782F501A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B200148-814F-4B57-A0FD-F87EBF76E05D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B200148-814F-4B57-A0FD-F87EBF76E05D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B200148-814F-4B57-A0FD-F87EBF76E05D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B200148-814F-4B57-A0FD-F87EBF76E05D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

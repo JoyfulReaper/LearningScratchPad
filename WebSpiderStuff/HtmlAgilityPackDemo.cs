@@ -125,7 +125,7 @@ namespace WebSpiderStuff
                 {
                     Uri uri = new Uri(foundLink);
 
-                    if (!links.Contains(uri)) // Not sure this will do what I want with reference types
+                    if (!links.Contains(uri) && !followedLinks.Contains(uri))
                     {
                         links.Add(new Uri(foundLink));
                     }
