@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorNETUG", "BlazorNETUG\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{50338855-30BF-4C23-84D8-C66F319CF4B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoAPI", "TodoAPI\TodoAPI.csproj", "{535A6C89-3080-4922-8565-27B872D0E57A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoAPI", "TodoAPI\TodoAPI.csproj", "{535A6C89-3080-4922-8565-27B872D0E57A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapperTest", "MapperTest\MapperTest.csproj", "{8AE899FB-D8DC-4E83-8AE5-98279021564E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{535A6C89-3080-4922-8565-27B872D0E57A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{535A6C89-3080-4922-8565-27B872D0E57A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{535A6C89-3080-4922-8565-27B872D0E57A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AE899FB-D8DC-4E83-8AE5-98279021564E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AE899FB-D8DC-4E83-8AE5-98279021564E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AE899FB-D8DC-4E83-8AE5-98279021564E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AE899FB-D8DC-4E83-8AE5-98279021564E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
