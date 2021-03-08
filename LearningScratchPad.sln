@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskTesting", "TaskTesting\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryPattern", "FactoryPattern\FactoryPattern.csproj", "{5D3B862D-73E7-44AE-8FDB-F4A595BEDA02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WINFORMSTESTA", "WINFORMSTESTA\WINFORMSTESTA.csproj", "{623E3081-B4BB-4AE8-9312-B81FF2565EF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WINFORMSTESTA", "WINFORMSTESTA\WINFORMSTESTA.csproj", "{623E3081-B4BB-4AE8-9312-B81FF2565EF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xUnitIntro", "xUnitIntro\xUnitIntro.csproj", "{197982A9-16AC-4AA8-AC53-27D880811AC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{623E3081-B4BB-4AE8-9312-B81FF2565EF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{623E3081-B4BB-4AE8-9312-B81FF2565EF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{623E3081-B4BB-4AE8-9312-B81FF2565EF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{197982A9-16AC-4AA8-AC53-27D880811AC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{197982A9-16AC-4AA8-AC53-27D880811AC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{197982A9-16AC-4AA8-AC53-27D880811AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{197982A9-16AC-4AA8-AC53-27D880811AC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
