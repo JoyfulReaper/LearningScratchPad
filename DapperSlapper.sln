@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperSlapper", "DapperSlapper\DapperSlapper.csproj", "{16066189-1FD5-4154-8313-0483AB7AFD5E}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DapperSlapperDB", "DapperSlapperDB\DapperSlapperDB.sqlproj", "{4793DC4A-CF4B-43A1-AA1D-97B394CC4CAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16066189-1FD5-4154-8313-0483AB7AFD5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16066189-1FD5-4154-8313-0483AB7AFD5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16066189-1FD5-4154-8313-0483AB7AFD5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16066189-1FD5-4154-8313-0483AB7AFD5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4793DC4A-CF4B-43A1-AA1D-97B394CC4CAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4793DC4A-CF4B-43A1-AA1D-97B394CC4CAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4793DC4A-CF4B-43A1-AA1D-97B394CC4CAA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4793DC4A-CF4B-43A1-AA1D-97B394CC4CAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4793DC4A-CF4B-43A1-AA1D-97B394CC4CAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4793DC4A-CF4B-43A1-AA1D-97B394CC4CAA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA8738ED-3CA9-40F0-93A6-33BB9202ABEF}
+	EndGlobalSection
+EndGlobal

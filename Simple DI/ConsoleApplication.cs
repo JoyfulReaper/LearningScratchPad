@@ -19,6 +19,7 @@ namespace Simple_DI
         {
             Console.WriteLine("Hello Whirled");
             Console.WriteLine(_test.DoSomethingUseful());
+            System.Diagnostics.Debug.WriteLine("This is the test output");
         }
     }
 }
